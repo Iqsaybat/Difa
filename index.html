@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light only">
 <meta name="description" content="هودي البطانية من دِفا. حجز مسبق، والدفع كاش عند الاستلام في ليبيا.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <!-- Meta Pixel goes here -->
@@ -16,22 +17,14 @@
 :root{
   --bg:#F3ECE2; --surface:#FBF7F1; --soft:#E9DFD1; --line:#DCCFBE;
   --ink:#4A3A2E; --muted:#8A7765; --accent:#B97A45; --accent-ink:#FFFAF4;
-  --glow:rgba(205,150,95,.30); --good:#4F7A4A; --bad:#A8443A; --photo:#FFFFFF; --wa:#1E9E52; --wa-ink:#FFFFFF;
+  --glow:rgba(205,150,95,.30); --good:#4F7A4A; --bad:#A8443A; --photo:#FFFFFF; color-scheme:light; --wa:#1E9E52; --wa-ink:#FFFFFF;
   --font-display:"Baloo Bhaijaan 2","IBM Plex Sans Arabic",system-ui,sans-serif;
   --font-body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
   --r-lg:28px; --r-md:18px; --r-sm:12px;
   --shadow:0 18px 40px -22px rgba(74,58,46,.40);
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#221B16; --surface:#2C241E; --soft:#382E26; --line:#4A3D33;
-  --ink:#F1E7DA; --muted:#BFAE9C; --accent:#D69A62; --accent-ink:#22180F;
-  --glow:rgba(214,154,98,.20); --good:#8FBF86; --bad:#E8907F;
-  --shadow:0 18px 40px -22px rgba(0,0,0,.7); color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#221B16; --surface:#2C241E; --soft:#382E26; --line:#4A3D33;
-  --ink:#F1E7DA; --muted:#BFAE9C; --accent:#D69A62; --accent-ink:#22180F;
-  --glow:rgba(214,154,98,.20); --good:#8FBF86; --bad:#E8907F;
-  --shadow:0 18px 40px -22px rgba(0,0,0,.7); color-scheme:dark}
+
+
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.7;
