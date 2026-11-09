@@ -6,6 +6,7 @@
 <meta name="description" content="هودي البطانية من دِفا. حجز مسبق، والدفع كاش عند الاستلام في ليبيا.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <!-- Meta Pixel goes here -->
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zapk3r6urd");</script>
 <title>دِفا Store</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -581,9 +582,11 @@ const state = { color: HOODIE_COLORS[0], size: HOODIE_SIZES[0], qty: 1, view: "f
   leg: {color: LEG.colors[0], size: "M"}, sock: {color: SOCK.colors[0]} };
 let cart = [];
 const events = [];
+const FB_STANDARD = ["AddToCart","InitiateCheckout","Lead","ViewContent","Purchase"];
 function track(name, data){
   events.push({name, data, t: Date.now()});
-  try{ if(window.fbq) window.fbq("track", name, data || {}); }catch(e){}
+  try{ if(window.fbq) window.fbq(FB_STANDARD.includes(name) ? "track" : "trackCustom", name, data || {}); }catch(e){}
+  try{ if(window.clarity){ window.clarity("event", name); if(data && data.color) window.clarity("set", "color", String(data.color)); } }catch(e){}
 }
 
 const $ = s => document.querySelector(s);
