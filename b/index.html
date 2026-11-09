@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="هودي البطانية من دِفا. حجز مسبق، والدفع كاش عند الاستلام في ليبيا.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<!-- Meta Pixel goes here -->
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zapk3r6urd");</script>
+<title>دِفا Store</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: one warm product page, hoodie hero + buy box, add-ons row, honest pre-order flow, cart drawer and COD checkout sheet. */
+:root{
+  --bg:#F3ECE2; --surface:#FBF7F1; --soft:#E9DFD1; --line:#DCCFBE;
+  --ink:#4A3A2E; --muted:#8A7765; --accent:#B97A45; --accent-ink:#FFFAF4;
+  --glow:rgba(205,150,95,.30); --good:#4F7A4A; --bad:#A8443A; --photo:#FFFFFF; color-scheme:light; --wa:#1E9E52; --wa-ink:#FFFFFF;
+  --font-display:"Baloo Bhaijaan 2","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  --r-lg:28px; --r-md:18px; --r-sm:12px;
+  --shadow:0 18px 40px -22px rgba(74,58,46,.40);
+}
+
+
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 32px}
+h1,h2,h3{font-family:var(--font-display);line-height:1.25;text-wrap:balance;margin:0}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin-inline:auto}
+.num{font-variant-numeric:tabular-nums}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+
+/* Notice bar */
+.notice{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));background:var(--ink);color:var(--bg);
+  font-size:13.5px;text-align:center;padding:8px 16px}
+.notice b{color:var(--accent)}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px;border-bottom:1px solid var(--line)}
+.logo{font-family:var(--font-display);font-weight:800;font-size:30px;letter-spacing:0;display:flex;align-items:center;gap:8px}
+.logo .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px var(--glow)}
+.nav{display:flex;gap:18px;font-size:14.5px;color:var(--muted)}
+.nav a{color:inherit;text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.cart-btn{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);
+  border-radius:999px;padding:8px 16px;font-weight:600}
+.cart-btn .count{background:var(--accent);color:var(--accent-ink);min-width:24px;height:24px;border-radius:999px;
+  display:grid;place-items:center;font-size:13px;padding-inline:6px}
+@media (max-width:720px){.nav{display:none}}
+
+/* Product hero */
+.product{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;padding-block:32px 24px;align-items:start}
+@media (max-width:860px){.product{grid-template-columns:1fr;gap:20px;padding-top:18px}}
+.gallery{min-width:0}
+.stage{position:relative;border-radius:var(--r-lg);background:var(--photo);border:1px solid var(--line);
+  aspect-ratio:1/1;max-width:100%;overflow:hidden}
+.stage img{width:100%;height:100%;object-fit:contain;display:block;transition:opacity .25s}
+.stage .badge{position:absolute;top:14px;inset-inline-start:14px;background:var(--ink);color:var(--bg);
+  border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600}
+.stage svg{width:86%;height:auto;transition:transform .5s ease}
+.stage .tag{position:absolute;top:14px;inset-inline-start:14px;background:var(--surface);border-radius:999px;
+  padding:4px 12px;font-size:12.5px;color:var(--muted)}
+.stage .temp{position:absolute;bottom:14px;inset-inline-end:14px;background:var(--ink);color:var(--bg);
+  border-radius:var(--r-sm);padding:8px 12px;font-size:13px;line-height:1.4;max-width:62%}
+.stage .temp b{font-family:var(--font-display);font-size:22px;color:var(--accent);display:block}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px;max-width:460px}
+.thumb{aspect-ratio:1/1;max-width:100%;border-radius:var(--r-sm);background:var(--photo);border:2px solid var(--line);
+  padding:0;overflow:hidden}
+.thumb[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+.buy{min-width:0;display:flex;flex-direction:column;gap:18px}
+.eyebrow{font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.02em}
+.buy h1{font-size:clamp(34px,5vw,50px);font-weight:800}
+.lede{color:var(--muted);font-size:17px;max-width:46ch}
+.price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.price{font-family:var(--font-display);font-size:38px;font-weight:700}
+.price small{font-size:18px;font-weight:600;margin-inline-start:4px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);
+  border-radius:999px;padding:4px 12px;font-size:13px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+
+.opt-label{font-weight:600;font-size:14.5px;display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+.opt-label span{color:var(--muted);font-weight:500}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{width:44px;height:44px;border-radius:50%;border:3px solid var(--bg);box-shadow:0 0 0 1.5px var(--line);
+  background:var(--c);position:relative;transition:transform .15s}
+.sw:hover{transform:scale(1.06)}
+.sw[aria-checked="true"]{box-shadow:0 0 0 2.5px var(--ink)}
+.sw.small{width:32px;height:32px;border-width:2px}
+.sizes{display:flex;flex-wrap:wrap;gap:8px}
+.sz{border:1.5px solid var(--line);background:var(--surface);border-radius:var(--r-sm);padding:8px 14px;
+  font-size:14.5px;line-height:1.4;text-align:start}
+.sz small{display:block;color:var(--muted);font-size:12.5px}
+.sz[aria-checked="true"]{border-color:var(--ink);background:var(--soft)}
+.sz.compact{padding:6px 12px}
+
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;background:var(--surface)}
+.qty button{width:40px;height:40px;border:0;background:none;font-size:20px}
+.qty output{min-width:28px;text-align:center;font-weight:600}
+.cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn{border:0;border-radius:999px;padding:14px 28px;font-weight:700;font-size:16.5px;font-family:var(--font-body);
+  background:var(--accent);color:var(--accent-ink);box-shadow:0 10px 24px -12px var(--accent);transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn.block{width:100%}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.reassure{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;color:var(--muted)}
+.reassure div{background:var(--surface);border-radius:var(--r-sm);padding:10px;line-height:1.45}
+.reassure b{display:block;color:var(--ink);font-size:14px}
+@media (max-width:420px){.reassure{grid-template-columns:1fr}}
+
+/* Sections */
+section{padding-block:40px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.sec-head h2{font-size:clamp(26px,3.6vw,36px);font-weight:700}
+.sec-head p{color:var(--muted);max-width:52ch}
+
+/* Bundle band */
+.bundle{background:var(--ink);color:var(--bg);border-radius:var(--r-lg);padding:28px;display:grid;
+  grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
+.bundle .trio{display:flex;align-items:end}
+.bundle .trio svg{height:96px;width:auto}
+.bundle .trio svg+svg{margin-inline-start:-14px}
+.bundle .trio .ph{height:96px;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:var(--photo);margin-inline-end:6px;flex:none}
+.bundle .trio .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.bundle h3{font-size:26px;color:var(--bg)}
+.bundle p{opacity:.85}
+.bundle .save{font-family:var(--font-display);color:var(--accent);font-weight:700;font-size:20px}
+.bundle .btn{white-space:nowrap}
+@media (max-width:760px){.bundle{grid-template-columns:1fr;text-align:start}.bundle .trio svg{height:80px}}
+
+/* Add-on cards */
+.addons{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media (max-width:760px){.addons{grid-template-columns:1fr}}
+.addon{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;
+  display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start}
+@media (max-width:420px){.addon{grid-template-columns:1fr}}
+.addon .pic{background:var(--soft);border-radius:var(--r-md);aspect-ratio:1/1;display:grid;place-items:center;max-width:100%}
+.addon .pic svg{width:78%;height:auto}
+.addon .body{min-width:0;display:flex;flex-direction:column;gap:12px}
+.addon h3{font-size:22px}
+.addon .meta{color:var(--muted);font-size:14px}
+.addon .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.addon .p{font-family:var(--font-display);font-size:24px;font-weight:700}
+.btn.sm{padding:10px 18px;font-size:14.5px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:860px){.features{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.features{grid-template-columns:1fr}}
+.feat{padding:18px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line)}
+.feat svg{width:36px;height:36px;color:var(--accent);margin-bottom:8px}
+.feat h3{font-size:18px;margin-bottom:4px}
+.feat p{color:var(--muted);font-size:14.5px}
+
+/* Size table */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:14.5px}
+th,td{padding:12px 16px;text-align:start;border-bottom:1px solid var(--line)}
+th{background:var(--soft);font-weight:600}
+tr:last-child td{border-bottom:0}
+
+/* Promise + reviews */
+.promise{background:var(--soft);border-radius:var(--r-lg);padding:28px}
+.promise h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;margin-bottom:18px}
+.promise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:860px){.promise-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:460px){.promise-grid{grid-template-columns:1fr}}
+.pr{background:var(--surface);border-radius:var(--r-md);padding:16px;display:flex;flex-direction:column;gap:6px}
+.pr svg{width:30px;height:30px;color:var(--accent)}
+.pr b{font-size:16px}
+.pr span{color:var(--muted);font-size:14px;line-height:1.6}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.reviews{grid-template-columns:1fr}}
+.rv{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px;display:flex;flex-direction:column;gap:10px}
+.rv img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-sm);max-width:100%}
+.rv p{font-size:15px}
+.rv .who{color:var(--muted);font-size:13.5px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:20px;position:relative}
+.step::before{counter-increment:s;content:counter(s);font-family:var(--font-display);font-weight:800;font-size:22px;
+  width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:10px}
+.step h3{font-size:19px;margin-bottom:4px}
+.step p{color:var(--muted);font-size:14.5px}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px;max-width:780px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:4px 18px}
+summary{cursor:pointer;font-weight:600;padding-block:12px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;color:var(--accent);line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);padding-bottom:14px}
+
+footer.foot{margin-top:24px;background:var(--soft);border-radius:var(--r-lg);padding:32px 28px 20px;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;font-size:14.5px;color:var(--muted)}
+@media (max-width:760px){footer.foot{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+@media (max-width:420px){footer.foot{grid-template-columns:1fr;padding:26px 20px 18px}}
+.foot-brand{display:flex;flex-direction:column;gap:10px;min-width:0}
+.foot-brand p{max-width:34ch}
+.foot-col{display:flex;flex-direction:column;gap:8px;min-width:0}
+.foot-col b{color:var(--ink);font-size:15px;margin-bottom:2px}
+.foot-col a{color:var(--muted);text-decoration:none;width:fit-content}
+.foot-col a:hover{color:var(--ink)}
+.wa-link{display:inline-flex !important;align-items:center;gap:8px;background:var(--wa);color:var(--wa-ink) !important;
+  border-radius:999px;padding:8px 16px;font-weight:600}
+.wa-link svg{width:18px;height:18px}
+.foot-bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px}
+  justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* Mobile sticky bar */
+.mbar{position:fixed;inset:auto 0 0;z-index:25;background:var(--surface);border-top:1px solid var(--line);
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  display:none;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -10px 30px -20px rgba(0,0,0,.4)}
+.mbar .t{line-height:1.3;font-size:13px;color:var(--muted)}
+.mbar .t b{display:block;color:var(--ink);font-family:var(--font-display);font-size:20px}
+@media (max-width:860px){.mbar.show{display:flex}}
+
+/* Drawer + sheet */
+.scrim{position:fixed;inset:0;background:rgba(34,24,16,.5);z-index:40;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;bottom:0;inset-inline-start:0;width:min(420px,100%);z-index:50;background:var(--bg);
+  transform:translateX(105%);transition:transform .3s ease;display:flex;flex-direction:column;
+  padding:calc(16px + env(safe-area-inset-top,0px)) 20px calc(16px + env(safe-area-inset-bottom,0px));box-shadow:var(--shadow)}
+[dir="rtl"] .drawer{transform:translateX(105%)}
+.drawer.open{transform:none !important}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.drawer-head h2{font-size:24px}
+.x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:20px;line-height:1}
+.lines{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding-block:6px}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;background:var(--surface);
+  border-radius:var(--r-md);padding:10px;border:1px solid var(--line)}
+.line .mini{background:var(--soft);border-radius:10px;aspect-ratio:1/1;display:grid;place-items:center;padding:6px}
+.line .mini svg{width:100%;height:auto}
+.line .mini.photo{background:var(--photo);padding:0;overflow:hidden}
+.line .mini.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.line .info{min-width:0;font-size:14px;line-height:1.5}
+.line .info b{display:block;font-size:15px}
+.line .info span{color:var(--muted)}
+.line .right{display:flex;flex-direction:column;align-items:end;gap:6px}
+.line .qty button{width:30px;height:30px;font-size:17px}
+.line .qty output{min-width:20px;font-size:14px}
+.empty{color:var(--muted);text-align:center;padding:40px 10px}
+.nudge{background:var(--soft);border-radius:var(--r-md);padding:12px 14px;font-size:14px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+.nudge button{border:0;background:var(--ink);color:var(--bg);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+.totals{border-top:1px dashed var(--line);padding-top:12px;margin-top:10px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.totals div{display:flex;justify-content:space-between}
+.totals .save{color:var(--good)}
+.totals .grand{font-family:var(--font-display);font-size:22px;font-weight:700}
+.totals .note{font-size:13px;color:var(--muted)}
+
+.sheet{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:16px;pointer-events:none}
+.sheet .card{pointer-events:auto;background:var(--bg);border-radius:var(--r-lg);width:min(560px,100%);
+  max-height:calc(100% - 32px);overflow-y:auto;padding:24px;box-shadow:var(--shadow);opacity:0;transform:translateY(24px);transition:.25s}
+.sheet.open .card{opacity:1;transform:none}
+.sheet:not(.open) .card{visibility:hidden}
+.sheet h2{font-size:26px}
+.sheet .sub{color:var(--muted);font-size:14.5px;margin-top:4px}
+form{display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-weight:600;font-size:14.5px}
+.field input,.field select,.field textarea{font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);
+  border-radius:var(--r-sm);padding:12px 14px;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.field .err{color:var(--bad);font-size:13px;min-height:0}
+.field.invalid input,.field.invalid select{border-color:var(--bad)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:460px){.two{grid-template-columns:1fr}}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn.wa{background:var(--wa);color:var(--wa-ink);box-shadow:0 10px 24px -12px var(--wa);display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;width:100%}
+.btn.wa svg{width:22px;height:22px;flex:none}
+.wa-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:16px;margin-top:16px;display:flex;flex-direction:column;gap:10px;text-align:start}
+.wa-box .msg{font-size:13.5px;color:var(--muted);background:var(--soft);border-radius:var(--r-sm);padding:10px 12px;user-select:all}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;cursor:pointer;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:12px 14px}
+.check input{width:20px;height:20px;accent-color:var(--accent);flex:none;margin-top:3px}
+.summary{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:14px;font-size:14px}
+.summary ul{margin:0;padding-inline-start:18px;color:var(--muted)}
+.summary .tot{display:flex;justify-content:space-between;font-weight:700;margin-top:8px;font-size:16px}
+.cod{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:var(--r-md);padding:12px 14px;font-size:14px}
+.cod svg{flex:none;width:24px;height:24px;color:var(--accent)}
+.done{text-align:center;padding:10px 0}
+.done .big{width:84px;height:84px;margin:0 auto 12px;border-radius:50%;background:var(--soft);display:grid;place-items:center}
+.done .big svg{width:44px;height:44px;color:var(--good)}
+.done .oid{font-family:var(--font-display);font-size:22px;margin-block:8px;direction:ltr}
+
+.toast{position:fixed;inset-inline:0;bottom:calc(84px + env(safe-area-inset-bottom,0px));margin-inline:auto;width:max-content;
+  max-width:calc(100% - 32px);z-index:70;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;
+  font-size:14.5px;opacity:0;transform:translateY(10px);transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
+</style>
+
+</head>
+<body>
+<div dir="rtl" lang="ar">
+<div class="notice">متاح حاليًا للحجز المسبق · التوصيل خلال <b>3–4 أسابيع</b> · الدفع عند الاستلام</div>
+
+<header class="top wrap">
+  <div class="logo"><span class="dot"></span>دِفا</div>
+  <nav class="nav" aria-label="أقسام">
+    <a href="#features">المميزات</a><a href="#size">المقاسات</a><a href="#faq">الأسئلة الشائعة</a>
+  </nav>
+  <button class="cart-btn" id="openCart" aria-label="فتح السلة">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+    السلة <span class="count num" id="cartCount">0</span>
+  </button>
+</header>
+
+<main class="wrap">
+  <!-- Product -->
+  <div class="product" id="product">
+    <div class="gallery">
+      <div class="stage" id="stage">
+        <img id="stageImg" src="../img/hoodie-burgundy.jpg" alt="هودي البطانية" width="800" height="800">
+        <span class="badge">حجز مسبق</span>
+      </div>
+      <div class="thumbs" role="group" aria-label="ألوان الهودي" id="thumbs"></div>
+    </div>
+
+    <div class="buy">
+      <div class="eyebrow">هودي البطانية · فرو ناعم</div>
+      <h1>ليالي الشتاء صارت أدفى</h1>
+      <p class="lede">نعومة البطانية وراحة الهودي في قطعة واحدة. قصّة واسعة تصل إلى الركبة، وفرو ناعم يحيط بك، وجيبان يدفّئان يديك. للسهرة والقراءة، ولكل لحظة هادئة في المنزل.</p>
+      <div class="price-row">
+        <div class="price num" id="hoodiePrice">350<small>د.ل</small></div>
+        <span class="pill"><i></i>متاح حاليًا للحجز المسبق</span>
+      </div>
+
+      <div>
+        <div class="opt-label">اللون <span id="colorName">نبيتي</span></div>
+        <div class="swatches" role="radiogroup" aria-label="لون الهودي" id="hoodieColors"></div>
+      </div>
+      <div>
+        <div class="opt-label">المقاس <a href="#size" style="color:var(--muted);font-weight:500;font-size:13.5px">دليل المقاسات</a></div>
+        <div class="sizes" role="radiogroup" aria-label="مقاس الهودي" id="hoodieSizes"></div>
+      </div>
+
+      <div class="cta-row">
+        <div class="qty" aria-label="الكمية">
+          <button type="button" id="qMinus" aria-label="إنقاص">−</button>
+          <output id="qVal" class="num">1</output>
+          <button type="button" id="qPlus" aria-label="زيادة">+</button>
+        </div>
+        <button class="btn" id="addHoodie" style="flex:1;min-width:200px">احجز قطعتك</button>
+      </div>
+
+      <div class="reassure">
+        <div><b>الدفع عند الاستلام</b>لا تدفع إلا عند وصول طلبك</div>
+        <div><b>تأكيد شخصي</b>نتواصل معك قبل التوصيل</div>
+        <div><b>توصيل مجاني</b>حتى باب منزلك في طرابلس وبنغازي</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews (hidden until REVIEWS has real entries) -->
+  <section id="reviews" hidden>
+    <div class="sec-head"><h2>آراء عملائنا</h2></div>
+    <div class="reviews" id="reviewList"></div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="sec-head"><h2>ما الذي يميّز دِفا؟</h2></div>
+    <div class="features">
+      <div class="feat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5l2.6-1.5M17.2 9l2.6-1.5"/><circle cx="12" cy="12" r="4"/></svg>
+        <h3>فرو ناعم</h3><p>ملمس ناعم يحتفظ بالدفء طويلًا، وأدفأ من البطانية العادية لأنه يحيط بك.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+        <h3>دفء أثناء الحركة</h3><p>لا حاجة للجلوس تحت البطانية. ارتدِه وأكمل يومك في المنزل.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4z"/><path d="M4 11h16"/><path d="M10 15h4"/></svg>
+        <h3>جيبان واسعان</h3><p>لهاتفك وجهاز التحكم، ولتدفئة يديك.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+        <h3>قابل للغسل في الغسالة</h3><p>غسيل بارد وتجفيف في الظل، ويحافظ على نعومته غسلة بعد أخرى.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size guide -->
+  <section id="size">
+    <div class="sec-head">
+      <h2>دليل المقاسات</h2>
+      <p>الهودي واسع بتصميمه، ومقاس واحد يناسب معظم الأشخاص.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>المنتج</th><th>المقاس</th><th>يناسب</th><th>الطول</th></tr></thead>
+        <tbody class="num">
+          <tr><td>هودي البطانية</td><td>مقاس واحد</td><td>الطول 150–190 سم، حتى 120 كغ</td><td>حوالي 95 سم</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- How pre-order works -->
+  <section>
+    <div class="sec-head">
+      <h2>كيف يتم الحجز المسبق؟</h2>
+      <p>نجهّز طلبياتنا بحسب حجوزاتكم، لنوفّر الألوان التي تفضّلونها فعلًا.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>احجز من الموقع</h3><p>اختر لونك واكتب اسمك ورقم هاتفك. لا تدفع شيئًا الآن.</p></div>
+      <div class="step"><h3>نتواصل معك</h3><p>قبل التوصيل مباشرةً، نتواصل معك لتأكيد عنوان التوصيل.</p></div>
+      <div class="step"><h3>استلم وادفع</h3><p>خلال 3–4 أسابيع من التأكيد. تعاين قطعتك بنفسك ثم تدفع.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="sec-head"><h2>أسئلة متكررة</h2></div>
+    <div class="faq">
+      <details><summary>لماذا الحجز مسبق؟</summary><p>نستعد حاليًا لطلبية جديدة بألوان أكثر، ونجهّز الكميات بحسب حجوزاتكم. احجز الآن لتضمن لونك من أول شحنة.</p></details>
+      <details><summary>هل يجب الدفع مسبقًا؟</summary><p>لا. الدفع نقدًا عند الاستلام فقط. الحجز يعني أنك ترغب في القطعة، وسنتواصل معك لتأكيده.</p></details>
+      <details><summary>هل يمكنني إلغاء الحجز؟</summary><p>نعم، في أي وقت قبل التوصيل. يكفي أن تخبرنا عند تواصلنا معك أو عبر واتساب.</p></details>
+      <details><summary>أين توصّلون؟</summary><p>نوصّل حاليًا إلى طرابلس وبنغازي، ونؤكد معك موعد التوصيل هاتفيًا.</p></details>
+      <details><summary>كم رسوم التوصيل؟</summary><p>التوصيل مجاني إلى طرابلس وبنغازي.</p></details>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-brand">
+      <div class="logo"><span class="dot"></span>دِفا</div>
+      <p>ملابس دافئة للمنزل، صُمّمت لليالي الشتاء الهادئة.</p>
+    </div>
+    <nav class="foot-col" aria-label="روابط الموقع">
+      <b>تصفّح</b>
+      <a href="#product">الهودي</a>
+      <a href="#features">المميزات</a>
+      <a href="#size">دليل المقاسات</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+    </nav>
+    <div class="foot-col">
+      <b>تواصل معنا</b>
+      <a class="wa-link" id="footWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>واتساب</a>
+      <span class="num" dir="ltr" id="footNum" style="text-align:right"></span>
+      <span>طرابلس · بنغازي</span>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 دِفا · ليبيا</span>
+      <span>الدفع عند الاستلام · توصيل مجاني</span>
+    </div>
+  </footer>
+</main>
+
+<!-- Cart drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="السلة" aria-hidden="true">
+  <div class="drawer-head"><h2>سلتك</h2><button class="x" id="closeCart" aria-label="إغلاق">×</button></div>
+  <div class="lines" id="lines"></div>
+  <div id="nudgeBox"></div>
+  <div class="totals" id="totals"></div>
+  <button class="btn block" id="toCheckout" style="margin-top:14px">أكمل الحجز</button>
+</aside>
+
+<!-- Checkout sheet -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="ckTitle">
+  <div class="card" id="sheetCard"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+/* ===== Settings to change before launch ===== */
+const CONFIG = {
+  // Google Apps Script web-app URL that appends each order to a Google Sheet. Empty = demo mode.
+  orderEndpoint: "https://script.google.com/macros/s/AKfycby0iepRPmuCwVr78x5ZaJ2puu_kZsXbEFy2Z6Azdw9V9tD7K6t0B4l-q5Xfg5CsKklurw/exec",
+  // Business WhatsApp number, digits only with country code (218...). PLACEHOLDER until Sam sends the real one.
+  whatsapp: "218934388887",
+  minFillSeconds: 4,
+  // Price test page label, shown in the Google Sheet
+  variant: "B-350",
+  // TEST ONLY: also accept US numbers (10 digits). Set to false before launch.
+  allowTestNumbers: true,
+  currency: "د.ل",
+  setDiscount: 30,
+  showAddons: false   // leggings & socks hidden for the hoodie-only test
+};
+
+/* ===== Catalog (placeholder prices) ===== */
+const HOODIE_COLORS = [
+  {id:"burgundy", name:"نبيتي",   c:"#8E1F33", img:"../img/hoodie-burgundy.jpg"},
+  {id:"purple",   name:"بنفسجي",  c:"#4A2C6E", img:"../img/hoodie-purple.jpg"},
+  {id:"grey",     name:"رمادي",   c:"#B4B4B8", img:"../img/hoodie-grey.jpg"},
+  {id:"skyblue",  name:"سماوي",   c:"#A8CCE8", img:"../img/hoodie-skyblue.jpg"},
+  {id:"pink",     name:"وردي",    c:"#EDB2B8", img:"../img/hoodie-pink.jpg"}
+];
+HOODIE_COLORS.forEach(c => { const i = new Image(); i.src = c.img; });
+const HOODIE_SIZES = [
+  {id:"adult", name:"مقاس واحد", note:"يناسب الطول 150–190 سم", price:350}
+];
+const LEG = {id:"leggings", name:"ليقنز فرو", meta:"قماش مبطّن من الداخل، خصر مطاطي مريح", price:75,
+  colors:[{id:"black",name:"أسود",c:"#25212A"},{id:"mocha",name:"بني موكا",c:"#6B4A3C"},{id:"grey",name:"رمادي",c:"#7A7980"},{id:"navy",name:"كحلي",c:"#2C3452"}],
+  sizes:["S","M","L","XL"]};
+const SOCK = {id:"socks", name:"جوارب فرو", meta:"فرو ناعم من برا وجوا، مقاس 36–43", price:25,
+  colors:[{id:"cream",name:"كريمي",c:"#EDE2D2"},{id:"rose",name:"وردي",c:"#E1B2AD"},{id:"grey",name:"رمادي فاتح",c:"#A3A2A8"},{id:"caramel",name:"كراميل",c:"#C08A5B"}],
+  sizes:["مقاس واحد"]};
+
+/* ===== Illustrations (placeholders until real photos) ===== */
+function hoodieSVG(c, view){
+  if(view === "detail"){
+    let dots = "";
+    for(let y=20;y<300;y+=22){for(let x=(y/22)%2?20:31;x<300;x+=22){dots+=`<circle cx="${x}" cy="${y}" r="9" fill="#FFF7EE" opacity="${0.55+((x*y)%7)/20}"/>`;}}
+    return `<svg viewBox="0 0 300 300" aria-hidden="true"><defs><clipPath id="cl"><circle cx="150" cy="150" r="130"/></clipPath></defs>
+      <g clip-path="url(#cl)"><rect width="300" height="300" fill="#EFE3D3"/>${dots}
+      <path d="M0 210 Q150 160 300 210 V300 H0Z" fill="${c}"/><path d="M0 210 Q150 160 300 210" stroke="rgba(0,0,0,.18)" stroke-width="6" fill="none"/></g>
+      <circle cx="150" cy="150" r="130" fill="none" stroke="rgba(0,0,0,.08)" stroke-width="2"/></svg>`;
+  }
+  return `<svg viewBox="0 0 300 300" aria-hidden="true">
+    <ellipse cx="150" cy="282" rx="110" ry="9" fill="rgba(0,0,0,.12)"/>
+    <path d="M108 74 Q150 18 192 74 Q204 100 186 114 L114 114 Q96 100 108 74Z" fill="${c}"/>
+    <path d="M108 74 Q150 18 192 74 Q204 100 186 114 L114 114 Q96 100 108 74Z" fill="rgba(0,0,0,.14)"/>
+    <path d="M122 80 Q150 44 178 80 Q184 100 171 110 L129 110 Q116 100 122 80Z" fill="#F4E8DA"/>
+    <path d="M128 86 Q150 60 172 86" stroke="rgba(120,90,70,.25)" stroke-width="3" fill="none" stroke-dasharray="2 5" stroke-linecap="round"/>
+    <path d="M114 104 Q84 108 62 122 Q30 144 22 202 L17 250 Q31 259 50 254 L60 196 L68 172 L70 266 Q150 281 230 266 L232 172 L240 196 L250 254 Q269 259 283 250 L278 202 Q270 144 238 122 Q216 108 186 104 Q150 122 114 104Z" fill="${c}"/>
+    <path d="M17 250 Q31 259 50 254 L48 268 Q30 272 15 264Z" fill="#F4E8DA"/>
+    <path d="M283 250 Q269 259 250 254 L252 268 Q270 272 285 264Z" fill="#F4E8DA"/>
+    <path d="M70 266 Q150 281 230 266 L230 276 Q150 291 70 276Z" fill="${c}"/>
+    <path d="M70 266 Q150 281 230 266 L230 276 Q150 291 70 276Z" fill="rgba(0,0,0,.16)"/>
+    <path d="M104 202 Q150 194 196 202 L206 246 Q150 254 94 246Z" fill="rgba(0,0,0,.13)"/>
+    <path d="M104 202 Q150 194 196 202" stroke="rgba(255,255,255,.18)" stroke-width="2" fill="none"/>
+    <path d="M68 172 L66 140 M232 172 L234 140" stroke="rgba(0,0,0,.12)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M141 114 L140 150 M159 114 L160 150" stroke="#F4E8DA" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="140" cy="153" r="4" fill="#F4E8DA"/><circle cx="160" cy="153" r="4" fill="#F4E8DA"/>
+    <path d="M114 104 Q150 122 186 104" stroke="rgba(0,0,0,.12)" stroke-width="3" fill="none"/>
+  </svg>`;
+}
+function leggingsSVG(c){
+  return `<svg viewBox="0 0 200 260" aria-hidden="true">
+    <path d="M52 34 L148 34 L156 124 L142 246 L112 246 L104 112 L96 112 L88 246 L58 246 L44 124Z" fill="${c}"/>
+    <path d="M100 40 L100 112" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+    <path d="M70 60 L62 236 M130 60 L138 236" stroke="rgba(255,255,255,.08)" stroke-width="6" stroke-linecap="round"/>
+    <rect x="50" y="20" width="100" height="18" rx="6" fill="${c}"/><rect x="50" y="20" width="100" height="18" rx="6" fill="rgba(0,0,0,.18)"/>
+  </svg>`;
+}
+function socksSVG(c){
+  const sock = (dx, op) => `<g transform="translate(${dx} 0)">
+    <path d="M58 26 h52 v108 q0 18 14 27 l30 18 q16 11 7 27 q-9 13 -32 11 l-58 -7 q-26 -4 -26 -32 V26z" fill="${c}"/>
+    <path d="M58 26 h52 v108 q0 18 14 27 l30 18 q16 11 7 27 q-9 13 -32 11 l-58 -7 q-26 -4 -26 -32 V26z" fill="rgba(0,0,0,${op})"/>
+    <rect x="54" y="16" width="60" height="20" rx="9" fill="#F4E8DA"/>
+    <g fill="rgba(255,255,255,.22)"><circle cx="72" cy="60" r="4"/><circle cx="92" cy="78" r="4"/><circle cx="74" cy="100" r="4"/><circle cx="96" cy="120" r="4"/><circle cx="80" cy="150" r="4"/><circle cx="112" cy="176" r="4"/><circle cx="138" cy="196" r="4"/></g>
+  </g>`;
+  return `<svg viewBox="0 0 220 240" aria-hidden="true">${sock(28,.12)}${sock(0,0)}</svg>`;
+}
+
+/* Real customer reviews only. Add entries like:
+   {name:"سارة", city:"طرابلس", text:"...", img:"img/review-sara.jpg"}  (img optional) */
+const REVIEWS = [];
+function renderReviews(){
+  if(!REVIEWS.length) return;
+  $("#reviewList").innerHTML = REVIEWS.map(r => `<article class="rv">${r.img?`<img src="${r.img}" alt="" loading="lazy">`:""}<p>«${r.text}»</p><span class="who">${r.name} · ${r.city}</span></article>`).join("");
+  $("#reviews").hidden = false;
+}
+
+/* ===== State ===== */
+const state = { color: HOODIE_COLORS[0], size: HOODIE_SIZES[0], qty: 1, view: "front",
+  leg: {color: LEG.colors[0], size: "M"}, sock: {color: SOCK.colors[0]} };
+let cart = [];
+const events = [];
+const FB_STANDARD = ["AddToCart","InitiateCheckout","Lead","ViewContent","Purchase"];
+function track(name, data){
+  events.push({name, data, t: Date.now()});
+  try{ if(window.fbq) window.fbq(FB_STANDARD.includes(name) ? "track" : "trackCustom", name, data || {}); }catch(e){}
+  try{ if(window.clarity){ window.clarity("event", name); if(data && data.color) window.clarity("set", "color", String(data.color)); } }catch(e){}
+}
+
+const $ = s => document.querySelector(s);
+const fmt = n => `${n} ${CONFIG.currency}`;
+
+/* ===== Hoodie options ===== */
+function renderStage(){
+  const img = $("#stageImg");
+  img.src = state.color.img; img.alt = `هودي البطانية باللون ${state.color.name}`;
+  $("#thumbs").innerHTML = HOODIE_COLORS.map(c =>
+    `<button class="thumb" data-id="${c.id}" aria-pressed="${c.id===state.color.id}" aria-label="${c.name}" title="${c.name}"><img src="${c.img}" alt="" loading="lazy"></button>`).join("");
+}
+function renderHoodieOpts(){
+  $("#hoodieColors").innerHTML = HOODIE_COLORS.map(col =>
+    `<button class="sw" role="radio" style="--c:${col.c}" aria-checked="${col.id===state.color.id}" aria-label="${col.name}" data-id="${col.id}" title="${col.name}"></button>`).join("");
+  $("#hoodieSizes").innerHTML = HOODIE_SIZES.map(s =>
+    `<button class="sz" role="radio" aria-checked="${s.id===state.size.id}" data-id="${s.id}">${s.name}<small>${s.note} · ${fmt(s.price)}</small></button>`).join("");
+  $("#colorName").textContent = state.color.name;
+  $("#hoodiePrice").innerHTML = `${state.size.price}<small>${CONFIG.currency}</small>`;
+  $("#qVal").textContent = state.qty;
+}
+$("#hoodieColors").addEventListener("click", e => {
+  const b = e.target.closest(".sw"); if(!b) return;
+  state.color = HOODIE_COLORS.find(c => c.id === b.dataset.id);
+  track("ViewColor", {color: state.color.id});
+  renderHoodieOpts(); renderStage(); renderTrio();
+});
+$("#hoodieSizes").addEventListener("click", e => {
+  const b = e.target.closest(".sz"); if(!b) return;
+  state.size = HOODIE_SIZES.find(s => s.id === b.dataset.id); renderHoodieOpts();
+});
+$("#thumbs").addEventListener("click", e => {
+  const b = e.target.closest(".thumb"); if(!b) return;
+  state.color = HOODIE_COLORS.find(c => c.id === b.dataset.id);
+  track("ViewColor", {color: state.color.id});
+  renderHoodieOpts(); renderStage(); renderTrio();
+});
+$("#qMinus").onclick = () => { state.qty = Math.max(1, state.qty - 1); renderHoodieOpts(); };
+$("#qPlus").onclick  = () => { state.qty = Math.min(10, state.qty + 1); renderHoodieOpts(); };
+
+/* ===== Add-ons ===== */
+function addonCard(p, sel, art, key){
+  const sizes = p.sizes.length > 1 ? `<div><div class="opt-label">المقاس</div><div class="sizes" role="radiogroup" aria-label="مقاس ${p.name}">${
+    p.sizes.map(s => `<button class="sz compact" role="radio" data-k="${key}" data-size="${s}" aria-checked="${sel.size===s}">${s}</button>`).join("")}</div></div>` : "";
+  return `<article class="addon">
+    <div class="pic">${art(sel.color.c)}</div>
+    <div class="body">
+      <div><h3>${p.name}</h3><p class="meta">${p.meta}</p></div>
+      <div><div class="opt-label">اللون <span>${sel.color.name}</span></div>
+        <div class="swatches" role="radiogroup" aria-label="لون ${p.name}">${
+          p.colors.map(c => `<button class="sw small" role="radio" style="--c:${c.c}" data-k="${key}" data-color="${c.id}" aria-checked="${c.id===sel.color.id}" aria-label="${c.name}" title="${c.name}"></button>`).join("")}</div></div>
+      ${sizes}
+      <div class="foot"><span class="p num">${fmt(p.price)}</span><button class="btn sm" data-add="${key}">زيد للسلة</button></div>
+    </div></article>`;
+}
+function renderAddons(){
+  if(!$("#addonList")) return;
+  $("#addonList").innerHTML = addonCard(LEG, state.leg, leggingsSVG, "leg") + addonCard(SOCK, state.sock, socksSVG, "sock");
+}
+$("#addonList")?.addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.color){ const P = b.dataset.k==="leg"?LEG:SOCK; state[b.dataset.k].color = P.colors.find(c=>c.id===b.dataset.color); renderAddons(); }
+  else if(b.dataset.size){ state.leg.size = b.dataset.size; renderAddons(); }
+  else if(b.dataset.add==="leg"){ addItem({pid:"leggings", name:LEG.name, color:state.leg.color, size:state.leg.size, price:LEG.price, qty:1}); }
+  else if(b.dataset.add==="sock"){ addItem({pid:"socks", name:SOCK.name, color:state.sock.color, size:"مقاس واحد", price:SOCK.price, qty:1}); }
+});
+
+function renderTrio(){
+  if(!$("#trio")) return;
+  $("#trio").innerHTML = `<span class="ph"><img src="${state.color.img}" alt=""></span>` + leggingsSVG(state.leg.color.c) + socksSVG(state.sock.color.c);
+  const full = HOODIE_SIZES[0].price + LEG.price + SOCK.price;
+  $("#setFull").textContent = full; $("#setPrice").textContent = full - CONFIG.setDiscount;
+}
+
+/* ===== Cart ===== */
+const keyOf = it => `${it.pid}|${it.color.id}|${it.size}`;
+function addItem(it, silent){
+  const k = keyOf(it); const ex = cart.find(x => keyOf(x) === k);
+  if(ex) ex.qty = Math.min(10, ex.qty + it.qty); else cart.push({...it});
+  track("AddToCart", {pid: it.pid, color: it.color.id, size: it.size, value: it.price * it.qty, currency: "LYD"});
+  renderCart();
+  if(!silent) toast(`تمت إضافة ${it.name} (${it.color.name}) إلى السلة`);
+}
+function addHoodie(){
+  addItem({pid: state.size.id==="adult"?"hoodie":"hoodie-kids", name: state.size.id==="adult"?"هودي البطانية":"هودي البطانية أطفال",
+    color: state.color, size: state.size.name, price: state.size.price, qty: state.qty});
+  openCart();
+}
+$("#addHoodie").onclick = addHoodie;
+if($("#addSet")) $("#addSet").onclick = () => {
+  addItem({pid:"hoodie", name:"هودي البطانية", color:state.color, size:"كبار", price:HOODIE_SIZES[0].price, qty:1}, true);
+  addItem({pid:"leggings", name:LEG.name, color:state.leg.color, size:state.leg.size, price:LEG.price, qty:1}, true);
+  addItem({pid:"socks", name:SOCK.name, color:state.sock.color, size:"مقاس واحد", price:SOCK.price, qty:1}, true);
+  track("AddBundle", {});
+  openCart();
+};
+
+function totals(){
+  const sub = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const q = pid => cart.filter(i=>i.pid===pid).reduce((s,i)=>s+i.qty,0);
+  const sets = Math.min(q("hoodie"), q("leggings"), q("socks"));
+  const disc = sets * CONFIG.setDiscount;
+  return {sub, sets, disc, total: sub - disc, count: cart.reduce((s,i)=>s+i.qty,0), q};
+}
+function artFor(it){
+  if(it.pid.startsWith("hoodie")) return `<img src="${it.color.img}" alt="">`;
+  return it.pid==="leggings" ? leggingsSVG(it.color.c) : socksSVG(it.color.c);
+}
+function renderCart(){
+  const t = totals();
+  $("#cartCount").textContent = t.count;
+  $("#lines").innerHTML = cart.length ? cart.map((it,i)=>`
+    <div class="line">
+      <div class="mini${it.pid.startsWith("hoodie")?" photo":""}">${artFor(it)}</div>
+      <div class="info"><b>${it.name}</b><span>${it.color.name} · ${it.size}</span><div class="num">${fmt(it.price)}</div></div>
+      <div class="right">
+        <div class="qty"><button data-i="${i}" data-d="-1" aria-label="إنقاص">−</button><output class="num">${it.qty}</output><button data-i="${i}" data-d="1" aria-label="زيادة">+</button></div>
+      </div>
+    </div>`).join("") : `<div class="empty">سلّتك فارغة. اختر لون الهودي لتبدأ.</div>`;
+
+  let nudge = "";
+  if(CONFIG.showAddons && t.q("hoodie") > 0 && t.sets < t.q("hoodie")){
+    const needL = t.q("leggings") < t.q("hoodie"), needS = t.q("socks") < t.q("hoodie");
+    const what = needL && needS ? "ليقنز وجوارب" : needL ? "ليقنز" : "جوارب";
+    nudge = `<div class="nudge"><span>زيد ${what} ووفّر ${CONFIG.setDiscount} ${CONFIG.currency} على الطقم</span><button id="completeSet" data-l="${needL}" data-s="${needS}">زيد</button></div>`;
+  }
+  $("#nudgeBox").innerHTML = nudge;
+  $("#totals").innerHTML = cart.length ? `
+    <div><span>المجموع</span><span class="num">${fmt(t.sub)}</span></div>
+    ${t.disc ? `<div class="save"><span>خصم طقم الشتاء ×${t.sets}</span><span class="num">−${fmt(t.disc)}</span></div>` : ""}
+    <div class="grand"><span>الإجمالي</span><span class="num">${fmt(t.total)}</span></div>
+    <div class="note">التوصيل مجاني إلى طرابلس وبنغازي. الدفع عند الاستلام.</div>` : "";
+  $("#toCheckout").disabled = !cart.length;
+}
+$("#lines").addEventListener("click", e => {
+  const b = e.target.closest("button[data-i]"); if(!b) return;
+  const it = cart[+b.dataset.i]; it.qty += +b.dataset.d;
+  if(it.qty <= 0) cart.splice(+b.dataset.i, 1);
+  renderCart();
+});
+$("#nudgeBox").addEventListener("click", e => {
+  const b = e.target.closest("#completeSet"); if(!b) return;
+  if(b.dataset.l==="true") addItem({pid:"leggings", name:LEG.name, color:state.leg.color, size:state.leg.size, price:LEG.price, qty:1}, true);
+  if(b.dataset.s==="true") addItem({pid:"socks", name:SOCK.name, color:state.sock.color, size:"مقاس واحد", price:SOCK.price, qty:1}, true);
+  track("AddBundleFromCart", {});
+});
+
+function openCart(){ $("#drawer").classList.add("open"); $("#scrim").classList.add("open"); $("#drawer").setAttribute("aria-hidden","false"); }
+function closeCart(){ $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden","true"); if(!$("#sheet").classList.contains("open")) $("#scrim").classList.remove("open"); }
+$("#openCart").onclick = openCart;
+$("#closeCart").onclick = closeCart;
+$("#scrim").onclick = () => { closeCart(); closeSheet(); };
+
+/* ===== Checkout ===== */
+let sheetOpenedAt = 0;
+const CITIES = ["طرابلس","بنغازي","مصراتة","الزاوية","زليتن","البيضاء","سبها","مدينة أخرى"];
+function normPhone(v){
+  let d = v.replace(/[٠-٩]/g, x => "٠١٢٣٤٥٦٧٨٩".indexOf(x)).replace(/[^\d+]/g,"");
+  const raw = d;
+  d = d.replace(/^00218/,"0").replace(/^\+?218/,"0");
+  if(/^9[1-5]\d{7}$/.test(d)) d = "0" + d;
+  if(/^09[1-5]\d{7}$/.test(d)) return d;
+  if(CONFIG.allowTestNumbers){
+    const us = raw.replace(/^\+?1(?=\d{10}$)/,"");
+    if(/^[2-9]\d{9}$/.test(us)) return "+1" + us;
+  }
+  return null;
+}
+function openSheet(){
+  closeCart();
+  const t = totals();
+  track("InitiateCheckout", {value: t.total, currency:"LYD", num_items: t.count});
+  $("#sheetCard").innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:start;gap:12px">
+      <div><h2 id="ckTitle">احجز طلبك</h2></div>
+      <button class="x" id="closeSheet" aria-label="إغلاق">×</button>
+    </div>
+    <form id="ckForm" novalidate>
+      <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="field"><label for="f-name">الاسم</label><input id="f-name" name="name" autocomplete="name" placeholder="مثال: سارة محمد"><span class="err"></span></div>
+      <div class="field"><label for="f-phone">رقم الهاتف</label><input id="f-phone" name="phone" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="09X XXX XXXX" style="text-align:right"><span class="err"></span></div>
+      <div class="two">
+        <div class="field"><label for="f-city">المدينة</label><select id="f-city" name="city"><option value="">اختر المدينة</option>${CITIES.map(c=>`<option>${c}</option>`).join("")}</select><span class="err"></span></div>
+        <div class="field"><label for="f-area">المنطقة أو الحي</label><input id="f-area" name="area" placeholder="مثال: حي الأندلس"><span class="err"></span></div>
+      </div>
+      <div class="field"><label for="f-note">ملاحظة (اختياري)</label><textarea id="f-note" name="note" rows="2" placeholder="وقت مناسب للاتصال، أو أي ملاحظة أخرى"></textarea></div>
+      
+      <div class="summary">
+        <ul>${cart.map(i=>`<li>${i.name} · ${i.color.name} · ${i.size} ×${i.qty}</li>`).join("")}</ul>
+        ${t.disc?`<div style="color:var(--good);margin-top:6px">خصم الطقم: −${fmt(t.disc)}</div>`:""}
+        <div class="tot"><span>الإجمالي</span><span class="num">${fmt(t.total)}</span></div>
+      </div>
+      <div class="cod"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>
+        <span>هذا حجز مسبق. التوصيل خلال 3–4 أسابيع من التأكيد، والدفع نقدًا عند الاستلام. يمكنك الإلغاء في أي وقت قبل التوصيل.</span></div>
+      <button class="btn block" type="submit" id="submitBtn">تأكيد الحجز</button>
+    </form>`;
+  sheetOpenedAt = Date.now();
+  $("#sheet").classList.add("open"); $("#scrim").classList.add("open");
+  $("#closeSheet").onclick = closeSheet;
+  $("#ckForm").addEventListener("submit", submitOrder);
+  setTimeout(()=>{ try{ $("#f-name").focus(); }catch(e){} }, 250);
+}
+function closeSheet(){ $("#sheet").classList.remove("open"); $("#scrim").classList.remove("open"); }
+$("#toCheckout").onclick = openSheet;
+
+function setErr(id, msg){
+  const f = $(id).closest(".field"); f.classList.toggle("invalid", !!msg); f.querySelector(".err").textContent = msg || "";
+}
+async function submitOrder(e){
+  e.preventDefault();
+  const name = $("#f-name").value.trim(), phoneRaw = $("#f-phone").value.trim(),
+        city = $("#f-city").value, area = $("#f-area").value.trim(), note = $("#f-note").value.trim();
+  const phone = normPhone(phoneRaw);
+  setErr("#f-name", name.length < 2 ? "اكتب اسمك لنتمكن من التواصل معك." : "");
+  setErr("#f-phone", !phone ? "يجب أن يبدأ الرقم بـ 091 أو 092 أو 093 أو 094 أو 095، وأن يتكوّن من 10 أرقام." : "");
+  setErr("#f-city", !city ? "اختر مدينتك." : "");
+  setErr("#f-area", !area ? "اكتب المنطقة أو الحي." : "");
+  if(name.length < 2 || !phone || !city || !area) return;
+
+  const t = totals();
+  const order = {
+    id: "DF-" + Math.floor(100000 + Math.random() * 900000),
+    createdAt: new Date().toISOString(),
+    name, phone, city, area, note,
+    wantsAddons: !!($("#f-addons") && $("#f-addons").checked),
+    items: cart.map(i => ({product:i.pid, color:i.color.name, size:i.size, qty:i.qty, price:i.price})),
+    subtotal: t.sub, discount: t.disc, total: t.total, currency: "LYD",
+    source: CONFIG.variant + ((u => u ? " | " + u : "")(new URLSearchParams(location.search).get("utm_campaign")))
+  };
+  const btn = $("#submitBtn"); btn.disabled = true; btn.textContent = "جاري الإرسال...";
+  // Hidden checks: honeypot filled or form finished too fast = likely bot. Show success, send nothing.
+  const looksLikeBot = $("#f-website").value.trim() !== "" || (Date.now() - sheetOpenedAt) < CONFIG.minFillSeconds * 1000;
+  // Duplicate check (this browser): same phone ordered before.
+  try{ const prev = JSON.parse(localStorage.getItem("difa-demo-orders")||"[]").find(o => o.phone === phone); if(prev) order.duplicateOf = prev.id; }catch(err){}
+  order.flag = looksLikeBot ? "bot" : (order.duplicateOf ? "duplicate" : "");
+  let sent = false;
+  if(looksLikeBot){ showDone(order, name, phone, t); return; }
+  if(CONFIG.orderEndpoint){
+    try{
+      await fetch(CONFIG.orderEndpoint, {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain"}, body: JSON.stringify(order)});
+      sent = true;
+    }catch(err){ sent = false; }
+    if(!sent){ btn.disabled = false; btn.textContent = "تأكيد الحجز"; toast("تعذّر إرسال الطلب. تأكد من اتصالك بالإنترنت وحاول مرة أخرى."); return; }
+  }else{
+    try{ const k="difa-demo-orders"; const arr = JSON.parse(localStorage.getItem(k)||"[]"); arr.push(order); localStorage.setItem(k, JSON.stringify(arr)); }catch(err){}
+  }
+  track("Lead", {value: t.total, currency:"LYD"});
+  showDone(order, name, phone, t);
+}
+
+function waLink(order){
+  const items = order.items.map(i => `هودي ${i.color}${i.qty>1?" ×"+i.qty:""}`).join("، ");
+  const msg = `مرحبًا، أودّ تأكيد طلبي رقم ${order.id} – ${items}`;
+  return {msg, url: `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`};
+}
+function showDone(order, name, phone, t){
+  cart = []; renderCart();
+  const wa = waLink(order);
+  $("#sheetCard").innerHTML = `
+    <div class="done">
+      <div class="big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
+      <h2>شكرًا ${name.split(" ")[0]}، تم استلام حجزك 🤍</h2>
+      <div class="oid num">${order.id}</div>
+      <p class="sub">سنتواصل معك على <span dir="ltr" class="num">${phone}</span> عند التوصيل.</p>
+      <div class="wa-box">
+        <b>أكّد طلبك عبر واتساب ليكون في مقدمة الطلبات</b>
+        <span class="sub" style="margin:0">اضغط الزر وأرسل الرسالة الجاهزة:</span>
+        <div class="msg">${wa.msg}</div>
+        <a class="btn wa" id="waBtn" href="${wa.url}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+          أكّد طلبك عبر واتساب
+        </a>
+      </div>
+      
+      <button class="btn ghost" id="doneBtn" style="margin-top:12px">العودة إلى المتجر</button>
+    </div>`;
+  $("#waBtn").onclick = () => track("WhatsAppConfirm", {order: order.id});
+  $("#doneBtn").onclick = closeSheet;
+}
+
+/* ===== Misc ===== */
+let tt;
+function toast(msg){ const el = $("#toast"); el.textContent = msg; el.classList.add("show"); clearTimeout(tt); tt = setTimeout(()=>el.classList.remove("show"), 2200); }
+document.addEventListener("keydown", e => { if(e.key === "Escape"){ closeCart(); closeSheet(); } });
+
+renderHoodieOpts(); renderStage(); renderAddons(); renderTrio(); renderCart(); renderReviews();
+(function(){
+  const d = CONFIG.whatsapp.replace(/\D/g,"");
+  let shown = "+" + d;
+  if(/^2189\d{8}$/.test(d)) shown = `+218 ${d.slice(3,5)} ${d.slice(5,8)} ${d.slice(8)}`;
+  else if(/^1\d{10}$/.test(d)) shown = `+1 ${d.slice(1,4)} ${d.slice(4,7)} ${d.slice(7)}`;
+  $("#footNum").textContent = shown;
+  $("#footWa").href = `https://wa.me/${d}`;
+})();
+</script>
+
+</body>
+</html>

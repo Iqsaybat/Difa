@@ -488,6 +488,8 @@ const CONFIG = {
   // Business WhatsApp number, digits only with country code (218...). PLACEHOLDER until Sam sends the real one.
   whatsapp: "218934388887",
   minFillSeconds: 4,
+  // Price test page label, shown in the Google Sheet
+  variant: "A-500",
   // TEST ONLY: also accept US numbers (10 digits). Set to false before launch.
   allowTestNumbers: true,
   currency: "د.ل",
@@ -807,7 +809,7 @@ async function submitOrder(e){
     wantsAddons: !!($("#f-addons") && $("#f-addons").checked),
     items: cart.map(i => ({product:i.pid, color:i.color.name, size:i.size, qty:i.qty, price:i.price})),
     subtotal: t.sub, discount: t.disc, total: t.total, currency: "LYD",
-    source: new URLSearchParams(location.search).get("utm_campaign") || ""
+    source: CONFIG.variant + ((u => u ? " | " + u : "")(new URLSearchParams(location.search).get("utm_campaign")))
   };
   const btn = $("#submitBtn"); btn.disabled = true; btn.textContent = "جاري الإرسال...";
   // Hidden checks: honeypot filled or form finished too fast = likely bot. Show success, send nothing.
