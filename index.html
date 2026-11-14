@@ -846,6 +846,7 @@ async function submitOrder(e){
     try{ const k="difa-demo-orders"; const arr = JSON.parse(localStorage.getItem(k)||"[]"); arr.push(order); localStorage.setItem(k, JSON.stringify(arr)); }catch(err){}
   }
   track("Lead", {value: t.total, currency:"LYD"});
+  track("Purchase", {value: t.total, currency:"LYD", num_items: t.count});
   showDone(order, name, phone, t);
 }
 
