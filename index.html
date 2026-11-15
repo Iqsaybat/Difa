@@ -797,6 +797,19 @@ function openSheet(){
   $("#sheet").classList.add("open"); $("#scrim").classList.add("open");
   $("#closeSheet").onclick = closeSheet;
   $("#ckForm").addEventListener("submit", submitOrder);
+  // Funnel events: count steps only; nothing typed is sent anywhere unless the customer confirms.
+  const fstate = {started:false, complete:false, saw:false};
+  const formIsComplete = () => $("#f-name").value.trim().length >= 2 && !!normPhone($("#f-phone").value.trim()) && !!$("#f-city").value && !!$("#f-area").value.trim();
+  const onFormChange = () => {
+    if(!fstate.started){ fstate.started = true; track("StartedForm", {}); }
+    if(!fstate.complete && formIsComplete()){ fstate.complete = true; track("FormComplete", {}); }
+  };
+  $("#ckForm").addEventListener("input", onFormChange);
+  $("#ckForm").addEventListener("change", onFormChange);
+  try{
+    const io = new IntersectionObserver(es => { if(!fstate.saw && es.some(x => x.isIntersecting)){ fstate.saw = true; track("SawPreorderNote", {}); io.disconnect(); } }, {threshold: 0.6});
+    io.observe($("#sheetCard .cod"));
+  }catch(e){}
   setTimeout(()=>{ try{ $("#f-name").focus(); }catch(e){} }, 250);
 }
 function closeSheet(){ $("#sheet").classList.remove("open"); $("#scrim").classList.remove("open"); }
