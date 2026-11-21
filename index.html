@@ -358,7 +358,7 @@ src="https://www.facebook.com/tr?id=1153608977010948&ev=PageView&noscript=1"
       </div>
 
       <div>
-        <div class="opt-label">اللون <span id="colorName">نبيتي</span></div>
+        <div class="opt-label">اللون <span id="colorName"></span></div>
         <div class="swatches" role="radiogroup" aria-label="لون الهودي" id="hoodieColors"></div>
       </div>
       <div>
@@ -520,6 +520,14 @@ const HOODIE_COLORS = [
   {id:"skyblue",  name:"سماوي",   c:"#A8CCE8", img:"img/hoodie-skyblue.jpg"},
   {id:"pink",     name:"وردي",    c:"#EDB2B8", img:"img/hoodie-pink.jpg"}
 ];
+/* Color test: each visitor sees a random color first (pre-selected), kept the same on return visits */
+(function(){
+  let k = null; try{ k = localStorage.getItem("dafa-first-color"); }catch(e){}
+  let i = HOODIE_COLORS.findIndex(c => c.id === k);
+  if(i < 0){ i = Math.floor(Math.random() * HOODIE_COLORS.length); try{ localStorage.setItem("dafa-first-color", HOODIE_COLORS[i].id); }catch(e){} }
+  HOODIE_COLORS.push(...HOODIE_COLORS.splice(0, i));
+})();
+const FIRST_COLOR = HOODIE_COLORS[0].id;
 HOODIE_COLORS.forEach(c => { const i = new Image(); i.src = c.img; });
 const HOODIE_SIZES = [
   {id:"adult", name:"مقاس واحد", note:"يناسب الطول 150–190 سم", price:350}
@@ -837,7 +845,8 @@ async function submitOrder(e){
     wantsAddons: !!($("#f-addons") && $("#f-addons").checked),
     items: cart.map(i => ({product:i.pid, color:i.color.name, size:i.size, qty:i.qty, price:i.price})),
     subtotal: t.sub, discount: t.disc, total: t.total, currency: "LYD",
-    source: CONFIG.variant + ((u => u ? " | " + u : "")(new URLSearchParams(location.search).get("utm_campaign")))
+    source: CONFIG.variant + ((u => u ? " | " + u : "")(new URLSearchParams(location.search).get("utm_campaign"))) + " | first:" + FIRST_COLOR,
+    firstColor: FIRST_COLOR
   };
   const btn = $("#submitBtn"); btn.disabled = true; btn.textContent = "جاري الإرسال...";
   // Hidden checks: honeypot filled or form finished too fast = likely bot. Show success, send nothing.
