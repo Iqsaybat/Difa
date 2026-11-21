@@ -327,7 +327,7 @@ form{display:flex;flex-direction:column;gap:14px;margin-top:18px}
   <div class="product" id="product">
     <div class="gallery">
       <div class="stage" id="stage">
-        <img id="stageImg" src="../img/hoodie-burgundy.jpg" alt="هودي البطانية" width="800" height="800">
+        <img id="stageImg" src="../img/hoodie-grey.jpg" alt="هودي البطانية" width="800" height="800">
         <span class="badge">حجز مسبق</span>
       </div>
       <div class="thumbs" role="group" aria-label="ألوان الهودي" id="thumbs"></div>
@@ -500,19 +500,12 @@ const CONFIG = {
 
 /* ===== Catalog (placeholder prices) ===== */
 const HOODIE_COLORS = [
-  {id:"burgundy", name:"نبيتي",   c:"#8E1F33", img:"../img/hoodie-burgundy.jpg"},
-  {id:"purple",   name:"بنفسجي",  c:"#4A2C6E", img:"../img/hoodie-purple.jpg"},
   {id:"grey",     name:"رمادي",   c:"#B4B4B8", img:"../img/hoodie-grey.jpg"},
+  {id:"purple",   name:"بنفسجي",  c:"#4A2C6E", img:"../img/hoodie-purple.jpg"},
+  {id:"burgundy", name:"نبيتي",   c:"#8E1F33", img:"../img/hoodie-burgundy.jpg"},
   {id:"skyblue",  name:"سماوي",   c:"#A8CCE8", img:"../img/hoodie-skyblue.jpg"},
   {id:"pink",     name:"وردي",    c:"#EDB2B8", img:"../img/hoodie-pink.jpg"}
 ];
-/* Color test: each visitor sees a random color first (pre-selected), kept the same on return visits */
-(function(){
-  let k = null; try{ k = localStorage.getItem("dafa-first-color"); }catch(e){}
-  let i = HOODIE_COLORS.findIndex(c => c.id === k);
-  if(i < 0){ i = Math.floor(Math.random() * HOODIE_COLORS.length); try{ localStorage.setItem("dafa-first-color", HOODIE_COLORS[i].id); }catch(e){} }
-  HOODIE_COLORS.push(...HOODIE_COLORS.splice(0, i));
-})();
 const FIRST_COLOR = HOODIE_COLORS[0].id;
 HOODIE_COLORS.forEach(c => { const i = new Image(); i.src = c.img; });
 const HOODIE_SIZES = [
